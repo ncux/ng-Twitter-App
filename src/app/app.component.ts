@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
 
+  title = 'Angular Twitter';
+
   navLinks: any[];
   activeLinkIndex = -1;
 
