@@ -26,10 +26,7 @@ export class UsersComponent implements OnInit {
   }
 
   getUsers() {
-    this.searchService.searchUser(this.query).subscribe(results => {
-      console.log(results);
-      this.usersArray = results;
-    });
+    this.searchService.searchUser(this.query).subscribe(results => this.usersArray = results);
   }
 
 }

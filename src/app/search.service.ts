@@ -7,13 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class SearchService {
 
-
   private urlParams = `pages_limit=3&wait=0`;
   private hashtagsUrl = `https://am-twitter-scrape.herokuapp.com/hashtags/`;
   private usersUrl = `http://am-twitter-scrape.herokuapp.com/users/`;
 
   constructor(private http: HttpClient) { }
-
 
   searchHashtag(hashtag): Observable<any> {
     console.log(hashtag);
@@ -24,7 +22,6 @@ export class SearchService {
     console.log(user);
     return this.http.get(`${this.usersUrl}${user}?${this.urlParams}`);
   }
-
 
 
 }

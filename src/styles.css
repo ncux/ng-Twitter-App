@@ -6,19 +6,24 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+
 .custom-font {
+    /* it didn't adhere to the whole body */
     font-family: 'Raleway', sans-serif;
 }
+
 
 #app-title {
     font-weight: bold;
     font-family: 'Raleway', sans-serif;
 }
 
+
 #wrapper {
     width: 80%;
     margin: auto;
 }
+
 
 #component {
     background: white;
@@ -26,7 +31,7 @@ body {
 
 
 #component input {
-    border-radius: 0.4rem;
+    border-radius: 0.6rem;
     margin-bottom: 1rem;
 }
 
@@ -35,9 +40,19 @@ body {
     padding: 0.3rem;
 }
 
+
 table {
-    /*margin: auto;*/
     background: lightgrey;
+    border-radius: 0.6rem;
+}
+
+.tableContainer {
+    margin: auto;
+}
+
+
+mat-toolbar {
+    border-radius: 0.6rem;
 }
 
 

@@ -1,8 +1,5 @@
 
 
-
-
-
 <div id="wrapper">
 
     <mat-toolbar color="primary" class="mt-4">
@@ -15,7 +12,8 @@
            *ngFor="let link of navLinks"
            [routerLink]="link.link"
            routerLinkActive #rla="routerLinkActive"
-           [active]="rla.isActive" class="custom-font">
+           [active]="rla.isActive"
+           class="custom-font">
             {{ link.label }}
         </a>
 

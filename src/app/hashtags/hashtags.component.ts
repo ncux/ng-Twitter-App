@@ -27,10 +27,7 @@ export class HashtagsComponent implements OnInit {
   }
 
   getHashtags() {
-    this.searchService.searchHashtag(this.query).subscribe(results => {
-      console.log(results);
-      this.hashtagsArray = results;
-    });
+    this.searchService.searchHashtag(this.query).subscribe(results => this.hashtagsArray = results);
   }
 
 }
