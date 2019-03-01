@@ -2,13 +2,32 @@
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.custom-font {
+    font-family: 'Raleway', sans-serif;
+}
+
+#app-title {
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+}
+
+#wrapper {
+    width: 80%;
+    margin: auto;
+}
+
 #component {
-    background: lightgrey;
+    background: white;
 }
 
 
 #component input {
-
+    border-radius: 0.4rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -18,7 +37,7 @@
 
 table {
     /*margin: auto;*/
-    background: white;
+    background: lightgrey;
 }
 
 

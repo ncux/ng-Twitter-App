@@ -1,20 +1,28 @@
 
-<mat-toolbar color="primary">
-    <h2>Angular Twitter</h2>
-</mat-toolbar>
 
 
 
-<nav mat-tab-nav-bar>
 
-    <a mat-tab-link
-       *ngFor="let link of navLinks"
-       [routerLink]="link.link"
-       routerLinkActive #rla="routerLinkActive"
-       [active]="rla.isActive">
-        {{ link.label }}
-    </a>
+<div id="wrapper">
 
-</nav>
+    <mat-toolbar color="primary" class="mt-4">
+        <h2 id="app-title" class="custom-font">Angular Twitter</h2>
+    </mat-toolbar>
 
-<router-outlet></router-outlet>
+    <nav mat-tab-nav-bar>
+
+        <a mat-tab-link
+           *ngFor="let link of navLinks"
+           [routerLink]="link.link"
+           routerLinkActive #rla="routerLinkActive"
+           [active]="rla.isActive" class="custom-font">
+            {{ link.label }}
+        </a>
+
+    </nav>
+
+    <router-outlet></router-outlet>
+
+
+</div>
+
