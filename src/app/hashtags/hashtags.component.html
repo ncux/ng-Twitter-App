@@ -7,49 +7,56 @@
     <p class="lead">Hashtag search</p>
 
     <input (keydown.enter)="onEnterKeydown($event.target.value)" placeholder="Search by Hashtag" class="p-2">
+
     <br>
 
-    <table class="table table-striped" [mfData]="hashtagsArray" #mf="mfDataTable" [mfRowsOnPage]="10">
-      <thead>
-      <tr>
-        <th style="width: auto">
-          <mfDefaultSorter by="title"><a>Tweet</a></mfDefaultSorter>
-        </th>
-        <th style="width: auto">
-          <mfDefaultSorter by="createdAt">Likes</mfDefaultSorter>
-        </th>
-        <th style="width: auto">
-          <mfDefaultSorter by="updatedAt">Replies</mfDefaultSorter>
-        </th>
-        <th style="width: auto">
-          <mfDefaultSorter by="updatedAt">Retweets</mfDefaultSorter>
-        </th>
-        <th style="width: auto">
-          <mfDefaultSorter by="updatedAt">Hashtags</mfDefaultSorter>
-        </th>
-        <th style="width: auto">
-          <mfDefaultSorter by="updatedAt">Date</mfDefaultSorter>
-        </th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let tweet of mf.data">
-        <td>{{ (tweet.text.length > 50) ? (tweet.text | slice:0:50)+'...' : (tweet.text) }}</td>
-        <td>{{ (tweet.likes) ?  (tweet.likes) : '-'}}</td>
-        <td>{{ (tweet.replies) ?  (tweet.replies) : '-'}}</td>
-        <td>{{ (tweet.retweets) ?  (tweet.retweets) : '-'}}</td>
-        <td>{{ (tweet.hashtags.length > 2) ? (tweet.hashtags | slice:0:2) : (tweet.hashtags) }}</td>
-        <td>{{ tweet.date.slice(10) | date:'MMM d, yyyy' }}</td>
-      </tr>
-      </tbody>
-      <tfoot>
-      <tr>
-        <td class="align-content-center" colspan="4">
-          <mfBootstrapPaginator [rowsOnPageSet]="[]"></mfBootstrapPaginator>
-        </td>
-      </tr>
-      </tfoot>
-    </table>
+    <div class="tableContainer" *ngIf="hashtagsArray.length > 0">
+
+      <table class="table table-striped mx-auto" [mfData]="hashtagsArray" #mf="mfDataTable" [mfRowsOnPage]="10">
+        <thead>
+        <tr>
+          <th style="width: auto">
+            <mfDefaultSorter><a>Tweet</a></mfDefaultSorter>
+          </th>
+          <th style="width: auto">
+            <mfDefaultSorter>Likes</mfDefaultSorter>
+          </th>
+          <th style="width: auto">
+            <mfDefaultSorter>Replies</mfDefaultSorter>
+          </th>
+          <th style="width: auto">
+            <mfDefaultSorter>Retweets</mfDefaultSorter>
+          </th>
+          <th style="width: auto">
+            <mfDefaultSorter>Hashtags</mfDefaultSorter>
+          </th>
+          <th style="width: auto">
+            <mfDefaultSorter>Date</mfDefaultSorter>
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let tweet of mf.data">
+          <td>{{ (tweet.text.length > 50) ? (tweet.text | slice:0:50)+'...' : (tweet.text) }}</td>
+          <td>{{ (tweet.likes) ?  (tweet.likes) : '-'}}</td>
+          <td>{{ (tweet.replies) ?  (tweet.replies) : '-'}}</td>
+          <td>{{ (tweet.retweets) ?  (tweet.retweets) : '-'}}</td>
+          <td>{{ (tweet.hashtags.length > 2) ? (tweet.hashtags | slice:0:2) : (tweet.hashtags) }}</td>
+          <td>{{ tweet.date.slice(10) | date:'MMM d, yyyy' }}</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td class="align-content-center" colspan="4">
+            <mfBootstrapPaginator [rowsOnPageSet]="[]"></mfBootstrapPaginator>
+          </td>
+        </tr>
+        </tfoot>
+      </table>
+
+    </div>
+
+
 
   </div>
 
