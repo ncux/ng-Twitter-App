@@ -11,12 +11,15 @@ export class SearchService {
   private hashtagsUrl = `https://am-twitter-scrape.herokuapp.com/hashtags/`;
   private usersUrl = `http://am-twitter-scrape.herokuapp.com/users/`;
 
+
   constructor(private http: HttpClient) { }
+
 
   searchHashtag(hashtag): Observable<any> {
     console.log(hashtag);
     return this.http.get(`${this.hashtagsUrl}${hashtag}?${this.urlParams}`);
   }
+
 
   searchUser(user): Observable<any> {
     console.log(user);
